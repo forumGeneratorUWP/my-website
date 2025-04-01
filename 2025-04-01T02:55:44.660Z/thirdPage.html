@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thirdPage</title>
+  <style>* { box-sizing: border-box; } body {margin: 0;}.new-page{color:green;}.tab{padding:7px 14px;display:inline-block;border-radius:3px;margin-right:10px;}.tab:focus{outline:none;}.tab.tab-active{background-color:#0d94e6;color:white;}.tab-container{display:inline-block;}.tab-content{animation:fadeEffect 1s;}.test{background-color:#ff0d0d;}#ictol{background-color:#f33434;font-size:200px;}@media fadeEffect{from{opacity:0;}to{opacity:1;}}</style>
+</head>
+<body id="if9re"><div class="new-page">thirdPage</div><div id="i4ajr"></div><div id="in30f"><div role="tablist" class="tab-container"><div role="tab" aria-controls="iqci2" id="i18we" class="tab"><span>Tab</span></div><div role="tab" aria-controls="i3eu7" id="iqok7" class="tab"><span id="i46kw" class="test">Tab</span></div><div role="tab" aria-controls="io1gs" id="i3xhf" class="tab"><span id="ietck">Tab</span></div></div><span id="igr1f">Tab</span><div id="iwv48"><div role="tabpanel" id="iqci2" aria-labelledby="i18we" hidden class="tab-content"><div>Tab Content</div></div><div role="tabpanel" id="i3eu7" aria-labelledby="iqok7" hidden class="tab-content"><div id="ik6sh">Tab Content</div></div><div role="tabpanel" id="io1gs" aria-labelledby="i3xhf" hidden class="tab-content"><div>Tab Content</div></div></div></div><button type="button" id="ictol">Send</button></body><script>var props = {"i4ajr":{"strings":[],"type-speed":0,"start-delay":0,"back-speed":0,"smart-backspace":true,"back-delay":700,"fade-out":false,"fade-out-class":"typed-fade-out","fade-out-delay":500,"show-cursor":true,"cursor-char":"|","auto-insert-css":true,"bind-input-focus-events":false,"content-type":"html","loop":false,"loop-count":null,"shuffle":false,"attr":"","typedsrc":"https://cdn.jsdelivr.net/npm/typed.js@2.0.11"}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(e) {
+                                var t, n = this, o = (t = e.strings, Array.isArray(t) ? t : t.indexOf('\n') >= 0 ? t.split('\n') : []), r = function(e) {
+                                    return parseInt(e, 10) || 0;
+                                }, a = function(e) {
+                                    return !!e;
+                                }, s = function() {
+                                    var t = n;
+                                    t.innerHTML = '<span></span>';
+                                    var s = parseInt("".concat(e['loop-count']), 10);
+                                    "".concat(e['type-speed']);
+                                    var p = {
+                                        typeSpeed: r(e['type-speed']),
+                                        startDelay: r(e['start-delay']),
+                                        backDelay: r(e['back-delay']),
+                                        backSpeed: r(e['back-speed']),
+                                        smartBackspace: a(e['smart-backspace']),
+                                        fadeOut: a(e['fade-out']),
+                                        fadeOutClass: e['fade-out-class'],
+                                        fadeOutDelay: r(e['fade-out-delay']),
+                                        shuffle: a(e.shuffle),
+                                        loop: a(e.loop),
+                                        loopCount: isNaN(s) ? 1 / 0 : s,
+                                        showCursor: a(e['show-cursor']),
+                                        cursorChar: e['cursor-char'],
+                                        autoInsertCss: a(e['auto-insert-css']),
+                                        bindInputFocusEvents: a(e['bind-input-focus-events']),
+                                        attr: e.attr,
+                                        contentType: e['content-type']
+                                    };
+                                    o && o.length && (p.strings = o), new window.Typed(t.children[0], p);
+                                };
+                                if (window.Typed) s();
+                                else {
+                                    var p = document.createElement('script');
+                                    p.src = e.typedsrc, p.onload = s, document.head.appendChild(p);
+                                }
+                            }.bind(el))(props[el.id]);
+          }
+          var props = {"in30f":{"classactive":"tab-active","selectortab":"aria-controls"}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(t) {
+                                var e, n, r = this, o = t.classactive, a = t.selectortab, c = window, i = c.history, s = c._isEditor, b = '[role=tab]', p = document, l = p.body, u = p.location, f = l.matchesSelector || l.webkitMatchesSelector || l.mozMatchesSelector || l.msMatchesSelector, y = function(t, e) {
+                                    for(var n = t || [], r = 0; r < n.length; r++)e(n[r], r);
+                                }, d = function(t) {
+                                    return t.getAttribute(a);
+                                }, O = function(t, e) {
+                                    return t.querySelector(e);
+                                }, g = function() {
+                                    return r.querySelectorAll(b);
+                                }, j = function(t, e) {
+                                    return !s && (t.tabIndex = e);
+                                }, h = function(t) {
+                                    y(g(), function(t) {
+                                        t.className = t.className.replace(o, '').trim(), t.ariaSelected = 'false', j(t, '-1');
+                                    }), y(r.querySelectorAll("[role=tabpanel]"), function(t) {
+                                        return t.hidden = !0;
+                                    }), t.className += ' ' + o, t.ariaSelected = 'true', j(t, '0');
+                                    var e = d(t), n = e && O(r, "#".concat(e));
+                                    n && (n.hidden = !1);
+                                }, v = O(r, ".".concat(o).concat(b));
+                                (v = v || (n = (u.hash || '').replace('#', '')) && O(r, (e = a, "".concat(b, "[").concat(e, "=").concat(n, "]"))) || O(r, b)) && h(v), r.addEventListener('click', function(t) {
+                                    var e = t.target, n = f.call(e, b);
+                                    if (n || (e = function(t) {
+                                        var e;
+                                        return y(g(), function(n) {
+                                            e || n.contains(t) && (e = n);
+                                        }), e;
+                                    }(e)) && (n = 1), n && !t.__trg && e.className.indexOf(o) < 0) {
+                                        t.preventDefault(), t.__trg = 1, h(e);
+                                        var r = d(e);
+                                        try {
+                                            i && i.pushState(null, null, "#".concat(r));
+                                        } catch (t) {}
+                                    }
+                                });
+                            }.bind(el))(props[el.id]);
+          }</script>
+</html>
