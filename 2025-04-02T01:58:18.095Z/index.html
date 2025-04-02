@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>indexPage</title>
+  <style>* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin:0;}*{box-sizing:border-box;}body{margin:0;}.tab{display:inline-block;padding:7px 14px;margin-right:10px;border-radius:3px;}.tab:focus{outline:none;}.tab.tab-active{color:white;background-color:#0d94e6;}.tab-container{display:inline-block;}.tab-content{animation:fadeEffect 1s;}.tab-contents{padding:10px;min-height:100px;}#i6io{background-color:#313131;}.gjs-row{width:100%;display:table;padding:10px;}.gjs-cell{width:8%;height:75px;display:table-cell;}#ivfdo{color:#ffffff;}#ih3h{color:#ffffff;}#izfll{color:#ffffff;}#ixhq7{height:350px;}.countdown{text-align:center;}.countdown-block{display:inline-block;margin:0 10px;padding:10px;}.countdown-digit{font-size:5rem;}.countdown-endtext{font-size:5rem;}.countdown-cont{display:inline-block;}#i3yzg{color:#1976c8;font-size:50px;text-align:center;}#i0ncy{color:#ffffff;border:20px solid transparent;font-size:20px;text-align:center;}#ile3m{text-align:center;}#itf0l{color:#ffffff;padding:10px;font-size:50px;text-align:center;font-family:Helvetica, sans-serif;font-weight:700;letter-spacing:10px;}#ils6d{height:52.984375px;}@media fadeEffect{from{opacity:0;}to{opacity:1;}}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}</style>
+</head>
+<body id="i6io"><div id="ils6d" class="gjs-row"><div id="iovef" class="gjs-cell"><div id="itf0l">I AM A WEBSITE </div></div></div><div id="ihbj"><div role="tablist" class="tab-container"><div role="tab" id="im4f" aria-controls="idkpx" class="tab"><span id="ih3h">Map</span></div><div role="tab" id="i4y5k" aria-controls="inxif" class="tab"><span id="ivfdo">Countdown</span></div><div role="tab" id="icdsj" aria-controls="irp2b" class="tab"><span id="izfll">Birds</span></div></div><div class="tab-contents"><div role="tabpanel" id="idkpx" hidden aria-labelledby="im4f" class="tab-content"><iframe frameborder="0" id="ixhq7" src="https://maps.google.com/maps?&z=1&t=q&output=embed"></iframe></div><div role="tabpanel" id="inxif" hidden aria-labelledby="i4y5k" class="tab-content"><div id="iraf7" class="countdown"><span data-js="countdown" class="countdown-cont"><div class="countdown-block"><div data-js="countdown-day" class="countdown-digit"></div><div class="countdown-label">days</div></div><div class="countdown-block"><div data-js="countdown-hour" class="countdown-digit"></div><div class="countdown-label">hours</div></div><div class="countdown-block"><div data-js="countdown-minute" class="countdown-digit"></div><div class="countdown-label">minutes</div></div><div class="countdown-block"><div data-js="countdown-second" class="countdown-digit"></div><div class="countdown-label">seconds</div></div></span><span data-js="countdown-endtext" class="countdown-endtext"></span></div></div><div role="tabpanel" id="irp2b" hidden aria-labelledby="icdsj" class="tab-content"><div id="igufz" class="gjs-row"><div id="ile3m" class="gjs-cell"><label id="i3yzg">WHY I LOVE BIRDS</label></div></div><div id="i0ncy">Birds are fascinating creatures that inhabit nearly every corner of the world, from dense rainforests to open grasslands and icy polar regions. With their lightweight bones, feathers, and powerful wings, many species have mastered the art of flight, soaring through the skies with ease. Others, like penguins and ostriches, have adapted to life on land or in water, showcasing the incredible diversity of avian evolution. Birds play vital roles in ecosystems by controlling insect populations, dispersing seeds, and even shaping landscapes through their nesting habits. Their songs and calls add melody to nature, and their vibrant plumage often dazzles the eye, making them some of the most admired and studied animals on Earth.</div></div></div></div></body><script>var props = {"ihbj":{"classactive":"tab-active","selectortab":"aria-controls"}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(t) {
+                                var e, n, r = this, o = t.classactive, a = t.selectortab, c = window, i = c.history, s = c._isEditor, b = '[role=tab]', p = document, l = p.body, u = p.location, f = l.matchesSelector || l.webkitMatchesSelector || l.mozMatchesSelector || l.msMatchesSelector, y = function(t, e) {
+                                    for(var n = t || [], r = 0; r < n.length; r++)e(n[r], r);
+                                }, d = function(t) {
+                                    return t.getAttribute(a);
+                                }, O = function(t, e) {
+                                    return t.querySelector(e);
+                                }, g = function() {
+                                    return r.querySelectorAll(b);
+                                }, j = function(t, e) {
+                                    return !s && (t.tabIndex = e);
+                                }, h = function(t) {
+                                    y(g(), function(t) {
+                                        t.className = t.className.replace(o, '').trim(), t.ariaSelected = 'false', j(t, '-1');
+                                    }), y(r.querySelectorAll("[role=tabpanel]"), function(t) {
+                                        return t.hidden = !0;
+                                    }), t.className += ' ' + o, t.ariaSelected = 'true', j(t, '0');
+                                    var e = d(t), n = e && O(r, "#".concat(e));
+                                    n && (n.hidden = !1);
+                                }, v = O(r, ".".concat(o).concat(b));
+                                (v = v || (n = (u.hash || '').replace('#', '')) && O(r, (e = a, "".concat(b, "[").concat(e, "=").concat(n, "]"))) || O(r, b)) && h(v), r.addEventListener('click', function(t) {
+                                    var e = t.target, n = f.call(e, b);
+                                    if (n || (e = function(t) {
+                                        var e;
+                                        return y(g(), function(n) {
+                                            e || n.contains(t) && (e = n);
+                                        }), e;
+                                    }(e)) && (n = 1), n && !t.__trg && e.className.indexOf(o) < 0) {
+                                        t.preventDefault(), t.__trg = 1, h(e);
+                                        var r = d(e);
+                                        try {
+                                            i && i.pushState(null, null, "#".concat(r));
+                                        } catch (t) {}
+                                    }
+                                });
+                            }.bind(el))(props[el.id]);
+          }
+          var props = {"iraf7":{"startfrom":"","endText":"EXPIRED"}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(n) {
+                            var t = n.startfrom, e = n.endText, o = this, a = new Date(t).getTime(), c = o.querySelector('[data-js=countdown]'), d = o.querySelector('[data-js=countdown-endtext]'), s = o.querySelector('[data-js=countdown-day]'), l = o.querySelector('[data-js=countdown-hour]'), i = o.querySelector('[data-js=countdown-minute]'), r = o.querySelector('[data-js=countdown-second]'), u = o.__gjsCountdownInterval;
+                            u && clearInterval(u);
+                            var p = window.__gjsCountdownIntervals || [], v = [];
+                            p.forEach(function(n) {
+                                n.isConnected || (clearInterval(n.__gjsCountdownInterval), v.push(n));
+                            }), p.indexOf(o) < 0 && p.push(o), window.__gjsCountdownIntervals = p.filter(function(n) {
+                                return v.indexOf(n) < 0;
+                            });
+                            var y = function(n, t, e, o) {
+                                s.innerHTML = "".concat(n < 10 ? '0' + n : n), l.innerHTML = "".concat(t < 10 ? '0' + t : t), i.innerHTML = "".concat(e < 10 ? '0' + e : e), r.innerHTML = "".concat(o < 10 ? '0' + o : o);
+                            }, f = function() {
+                                var n = (new Date).getTime(), t = a - n, s = Math.floor(t / 864e5), l = Math.floor(t % 864e5 / 36e5), i = Math.floor(t % 36e5 / 6e4), r = Math.floor(t % 6e4 / 1e3);
+                                y(s, l, i, r), t < 0 && (clearInterval(o.__gjsCountdownInterval), d.innerHTML = e, c.style.display = 'none', d.style.display = '');
+                            };
+                            a ? (o.__gjsCountdownInterval = setInterval(f, 1e3), d.style.display = 'none', c.style.display = '', f()) : y(0, 0, 0, 0);
+                        }.bind(el))(props[el.id]);
+          }</script>
+</html>
