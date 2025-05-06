@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecondaryPage</title>
+  <style>* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin:0;}*{box-sizing:border-box;}body{margin:0;}.gjs-row{width:100%;display:table;padding:10px;}.gjs-cell{width:8%;height:75px;display:table-cell;}.internal-page-button{width:150px;border:1px solid white;height:30px;background-color:#7eabcd;}#ijx4t{left:10%;width:80%;position:relative;background-color:#84bed6;}@media fadeEffect{from{opacity:0;}to{opacity:1;}}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}</style>
+</head>
+<body><div id="ijx4t" class="gjs-row"><div id="it052" class="gjs-cell"><button class="internal-page-button" data-page-name="indexPage" id="ijqkwm">Back</button><form id="i6urip" data-to-email="tpelikan8986@gmail.com" data-email-subject="New Support Ticket" class="support-ticket-form"><div><label for="support-email">Your Email</label><input id="support-email" name="email" type="email" required placeholder="you@example.com"/></div><div><label for="support-message">Message</label><textarea id="support-message" name="message" required placeholder="Describe your issue..."></textarea></div><button type="submit" id="i5f36k">Submit Ticket</button></form></div></div></body><script>var items = document.querySelectorAll('#ijqkwm');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+let t=this.getAttribute("data-page-name")||"SecondaryPage";this.addEventListener("click",()=>{let e=window.location.href.replace(/\/$/,""),a="".concat(e,"/").concat(t,".html");window.location.href=a})
+}.bind(items[i]))();
+          }
+          var items = document.querySelectorAll('#i6urip');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+var t,e;let a=this,n=(null===(e=window)||void 0===e?void 0:null===(t=e.ENV)||void 0===t?void 0:t.NEXT_PUBLIC_API_BASE_URL)||"https://forum-gen-backend-production.up.railway.app";a.addEventListener("submit",async function(t){var e,o,i,r;t.preventDefault();let s=null===(o=a.querySelector('[name="email"]'))||void 0===o?void 0:null===(e=o.value)||void 0===e?void 0:e.trim(),l=null===(r=a.querySelector('[name="message"]'))||void 0===r?void 0:null===(i=r.value)||void 0===i?void 0:i.trim(),d=a.getAttribute("data-to-email"),c=a.getAttribute("data-email-subject");if(!s||!l||!d){alert("Please fill in all required fields.");return}try{if(!(await fetch("".concat(n,"/api/forum/example1DB/submit-ticket"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:s,message:l,to:d,subject:c})})).ok)throw Error("Submission failed");alert("✅ Ticket submitted successfully!"),a.reset()}catch(t){alert("❌ Error: "+t.message)}})
+}.bind(items[i]))();
+          }</script>
+</html>
