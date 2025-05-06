@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecondaryPage</title>
+  <style>* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin:0;}*{box-sizing:border-box;}body{margin:0;}.gjs-row{width:100%;display:table;padding:10px;}.gjs-cell{width:8%;height:75px;display:table-cell;}.internal-page-button{width:150px;border:1px solid white;height:30px;background-color:#7eabcd;}#ijx4t{left:10%;width:80%;height:600px;position:relative;background-color:#84bed6;}.support-ticket-form{top:100px;}.form-label{position:relative;font-size:20px;}.form-group{padding:0 0 10px 0;}#idptg{text-align:center;}.submit-button{padding:0 0 0 0;}@media fadeEffect{from{opacity:0;}to{opacity:1;}}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}</style>
+</head>
+<body><div id="ijx4t" class="gjs-row"><div id="it052" class="gjs-cell"><form class="support-ticket-form" id="i13fv"><button class="internal-page-button" data-page-name="indexPage" id="iem9l">Back</button><div id="idptg" class="gjs-row"><div class="gjs-cell"><form class="support-ticket-form" id="i0lhp"><div class="form-group"><label for="support-email" class="form-label">Your Email</label><input id="support-email" name="email" type="email" required placeholder="you@example.com" class="form-input"/></div><div class="form-group"><label for="support-message" class="form-label">Message</label><textarea id="support-message" name="message" required placeholder="Describe your issue..." class="form-textarea"></textarea></div><button type="submit" class="submit-button">Submit Ticket</button></form></div></div></form></div></div></body><script>var items = document.querySelectorAll('#i13fv, #i0lhp');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+const form = this;
+                    const baseURL = window?.ENV?.NEXT_PUBLIC_API_BASE_URL || 'https://forum-gen-backend-production.up.railway.app';
+                    form.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = form.querySelector('[name="email"]')?.value?.trim();
+                        const message = form.querySelector('[name="message"]')?.value?.trim();
+                        const to = form.getAttribute('data-to-email') || 'tpelikan8985@gmail.com';
+                        const subject = form.getAttribute('data-email-subject') || 'New Support Ticket';
+                        if (!email || !message) {
+                            alert('Please fill in all required fields.');
+                            return;
+                        }
+                        const endpoint = `${baseURL}/api/forum/example1DB/submit-ticket`;
+                        try {
+                            const res = await fetch(endpoint, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    email,
+                                    message,
+                                    to,
+                                    subject
+                                })
+                            });
+                            if (!res.ok) throw new Error('Submission failed');
+                            alert('✅ Ticket submitted successfully!');
+                            form.reset();
+                        } catch (err) {
+                            alert('❌ Error: ' + err.message);
+                        }
+                    });
+}.bind(items[i]))();
+          }
+          var items = document.querySelectorAll('#iem9l');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+const el = this;
+                    const name = el.getAttribute('data-page-name') || 'SecondaryPage';
+                    el.addEventListener('click', ()=>{
+                        let url = window.location.href;
+                        // Remove anything after "#"
+                        url = url.split('#')[0];
+                        // Remove everything after the second slash after the domain
+                        const urlParts = url.split('/');
+                        const base = urlParts.slice(0, 4).join('/');
+                        // If name is "indexPage", navigate to base URL only
+                        const targetURL = name === 'indexPage' ? `${base}/` : `${base}/${name}.html`;
+                        window.location.href = targetURL;
+                    });
+}.bind(items[i]))();
+          }</script>
+</html>
